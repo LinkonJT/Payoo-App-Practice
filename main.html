@@ -39,12 +39,12 @@
         <!-- Options Container -->
         <div class="mt-4 grid grid-cols-3 gap-3">
           <!-- box -1 -Add money -->
-          <div class="box cursor-pointer text-center border rounded-sm p-4">
+          <div id="addmoney-box" class="box cursor-pointer text-center border rounded-sm p-4">
             <img class="mx-auto w-8" src="./assets/wallet.png" alt="" />
             <h3 class="text-gray-500 font-semibold text-xs">Add Money</h3>
           </div>
           <!-- box -2 - Cashout -->
-          <div class="box cursor-pointer text-center border rounded-sm p-4">
+          <div id="cashout-box" class="box cursor-pointer text-center border rounded-sm p-4">
             <img class="mx-auto w-8" src="./assets/cashout.png" alt="" />
             <h3 class="text-gray-500 font-semibold text-xs">Cashout</h3>
           </div>
@@ -72,11 +72,13 @@
       </section>
 
       <!-- *********Add Money section **********8-->
-      <div class="px-8 font-semibold mb-2">
-        <h2>Add Money</h2>
-      </div>
+ 
 
-      <section>
+      <section id="addmoney-section">
+
+        <div class="px-8 font-semibold mb-2">
+          <h2>Add Money</h2>
+        </div>
         <!-- daisyui -->
         <div class="hero-content flex-col lg:flex-row-reverse">
           <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -124,7 +126,7 @@
                   required />
                 <div><a class="link link-hover">Forgot password?</a></div>
 
-                <!-- Login Button -->
+                <!-- Add Money Button -->
                 <button
                   id="addmoney-btn"
                   class="btn btn-neutral mt-4 bg-blue-700 rounded-full">
@@ -135,9 +137,70 @@
           </div>
         </div>
       </section>
+
+      <!-- *********Cash Out section **********-->
+    
+
+      <section id="cashout-section">
+
+        <div class="px-8 font-semibold mb-2">
+          <h2>Cash Out</h2>
+        </div>
+        <!-- daisyui -->
+        <div class="hero-content flex-col lg:flex-row-reverse">
+          <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+            <form class="card-body">
+
+              <fieldset class="fieldset">
+                <!-- Agent Number -->
+                <label class="fieldset-label font-bold"
+                  >Agent Number</label>
+                <input
+                  id="agent-number"
+                  value="20252025"
+                  type="number"
+                  class="input"
+                  placeholder="Enter 8 digit Agent number"
+                  required />
+                <!-- Amount to Cash Out -->
+                <label class="fieldset-label font-bold">Amount to Cash Out</label>
+                <input
+                  id="cashout-amount"
+                  type="number"
+                  class="input"
+                  placeholder="Add money to withdraw"
+                  required />
+
+                <!-- Cash Out PIN  -->
+                <label class="fieldset-label font-bold">5 digit Pin</label>
+                <input
+                  id="cashout-pin"
+                  value="12345"
+                  type="text"
+                  class="input"
+                  placeholder="Enter 5 Digit Cash Out Pin"
+                  required />
+                <div><a class="link link-hover">Forgot password?</a></div>
+
+                <!-- Cash Out Button -->
+                <button
+                  id="cashout-btn"
+                  class="btn btn-neutral mt-4 bg-blue-700 rounded-full">
+                  Withdraw Money
+                </button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </section>
+
+
+
     </section>
 
     <script src="./javascript/addmoneyLJ.js"></script>
+    <script src="./javascript/cahoutLJ.js"></script>
     <script src="./utilities/utilities.js"></script>
+    <script src="./javascript/toggleLJ.js"></script>
   </body>
 </html>

@@ -24,6 +24,10 @@ document
     const availableBalance = getInputTextByID("available-balance")
     console.log(availableBalance)
 
+    if(availableBalance<0){
+        alert("BALANCE NEEDS TO BE POSITIVE");
+        return
+    }
 
     if(accountNumber.length === 11){
         console.log("Valid: A/c number")
