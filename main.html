@@ -14,68 +14,130 @@
 
   <body class="bg-slate-800">
     <section class="max-w-md min-h-screen mx-auto bg-slate-200 border">
-      <header >
+      <header>
         <nav class="flex justify-around items-center mt-3 mb-8">
           <img class="w-14" src="./assets/group.png" alt="" />
           <div>
-            <h1 class="font-bold text-2xl">$45000</h1>
+            <!-- available balance -->
+            <h1 class="font-bold text-2xl">
+              $<span id="available-balance">4500</span>
+            </h1>
             <p class="text-xs text-gray-500">Available Balance</p>
           </div>
           <button class="btn rounded-lg text-gray-500">Log Out</button>
         </nav>
       </header>
 
-
       <!-- ****Options section Welcome to Payoo***** -->
-    <section class="px-8 py-3 rounded-md bg-slate-50 mb-5">
-        <img class="mb-2 " src="./assets/fire.png" alt="">
-        <p class="text-gray-500 text-sm">Enjoy easy and convenient financial services with us. Cashout charge is low and no tax. </p>
+      <section class="px-8 py-3 rounded-md bg-slate-50 mb-2">
+        <img class="mb-2" src="./assets/fire.png" alt="" />
+        <p class="text-gray-500 text-sm">
+          Enjoy easy and convenient financial services with us. Cashout charge
+          is low and no tax.
+        </p>
 
         <!-- Options Container -->
-        <div class=" mt-4 grid grid-cols-3 gap-3">
-            <!-- box -1 -Add money -->
-             <div class="box cursor-pointer text-center border rounded-sm p-4">
-                <img class="mx-auto w-8" src="./assets/wallet.png" alt="">
-                <h3 class="text-gray-500 font-semibold text-xs">Add Money</h3>
-             </div>
-            <!-- box -2 - Cashout -->
-             <div class="box cursor-pointer text-center border rounded-sm p-4">
-                <img class="mx-auto w-8" src="./assets/cashout.png" alt="">
-                <h3 class="text-gray-500 font-semibold text-xs">Cashout</h3>
-             </div>
-            <!-- box -3 -Transfer Money -->
-             <div class="box cursor-pointer text-center border rounded-sm p-4">
-                <img class="mx-auto w-8" src="./assets/transfer.png" alt=""> 
-                <h3 class="text-gray-500 font-semibold text-xs">Transfer Money</h3>
-             </div>
-            <!-- box -4 -Get Bonus -->
-             <div class="box cursor-pointer text-center border rounded-sm p-4">
-                <img class="mx-auto w-8" src="./assets/bonus.png" alt=""> 
-                <h3 class="text-gray-500 font-semibold text-xs">Get Bonus</h3>
-             </div>
-            <!-- box -5 -Pay Bill -->
-             <div class="box cursor-pointer text-center border rounded-sm p-4">
-                <img class="mx-auto w-8" src="./assets/paybill.png" alt="">
-                <h3 class="text-gray-500 font-semibold text-xs">Pay Bill</h3>
-             </div>
-            <!-- box -6 -Transactions -->
-             <div class="box cursor-pointer text-center border rounded-sm p-4">
-                <img class="mx-auto w-8" src="./assets/transaction.png" alt="">
-                <h3 class="text-gray-500 font-semibold text-xs">Transactions</h3>
-             </div>
+        <div class="mt-4 grid grid-cols-3 gap-3">
+          <!-- box -1 -Add money -->
+          <div class="box cursor-pointer text-center border rounded-sm p-4">
+            <img class="mx-auto w-8" src="./assets/wallet.png" alt="" />
+            <h3 class="text-gray-500 font-semibold text-xs">Add Money</h3>
+          </div>
+          <!-- box -2 - Cashout -->
+          <div class="box cursor-pointer text-center border rounded-sm p-4">
+            <img class="mx-auto w-8" src="./assets/cashout.png" alt="" />
+            <h3 class="text-gray-500 font-semibold text-xs">Cashout</h3>
+          </div>
+          <!-- box -3 -Transfer Money -->
+          <div class="box cursor-pointer text-center border rounded-sm p-4">
+            <img class="mx-auto w-8" src="./assets/transfer.png" alt="" />
+            <h3 class="text-gray-500 font-semibold text-xs">Transfer Money</h3>
+          </div>
+          <!-- box -4 -Get Bonus -->
+          <div class="box cursor-pointer text-center border rounded-sm p-4">
+            <img class="mx-auto w-8" src="./assets/bonus.png" alt="" />
+            <h3 class="text-gray-500 font-semibold text-xs">Get Bonus</h3>
+          </div>
+          <!-- box -5 -Pay Bill -->
+          <div class="box cursor-pointer text-center border rounded-sm p-4">
+            <img class="mx-auto w-8" src="./assets/paybill.png" alt="" />
+            <h3 class="text-gray-500 font-semibold text-xs">Pay Bill</h3>
+          </div>
+          <!-- box -6 -Transactions -->
+          <div class="box cursor-pointer text-center border rounded-sm p-4">
+            <img class="mx-auto w-8" src="./assets/transaction.png" alt="" />
+            <h3 class="text-gray-500 font-semibold text-xs">Transactions</h3>
+          </div>
         </div>
+      </section>
+
+      <!-- *********Add Money section **********8-->
+      <div class="px-8 font-semibold mb-2">
+        <h2>Add Money</h2>
+      </div>
+
+      <section>
+        <!-- daisyui -->
+        <div class="hero-content flex-col lg:flex-row-reverse">
+          <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+            <form class="card-body">
+              <!-- select BANK -->
+              <legend class="font-bold text-gray-600 text-xs">
+                Select A Bank
+              </legend>
+              <select id="bank-list" class="select">
+                <option selected>Select A Bank</option>
+                <option value="bkash">Bkash</option>
+                <option value="nagad">Nagad</option>
+                <option value="dbbl">DBBL</option>
+              </select>
+
+              <fieldset class="fieldset">
+                <!-- Login Account Number 11 digit -->
+                <label class="fieldset-label font-bold"
+                  >Bank Account Number</label
+                >
+                <input
+                  id="account-number"
+                  value="01718429189"
+                  type="number"
+                  class="input"
+                  placeholder="Enter Your number"
+                  required />
+                <!-- Amount to Add -->
+                <label class="fieldset-label font-bold">Amount to add</label>
+                <input
+                  id="addmoney-amount"
+                  type="number"
+                  class="input"
+                  placeholder="Add money to save"
+                  required />
+
+                <!-- Login PIN  -->
+                <label class="fieldset-label font-bold">4 digit Pin</label>
+                <input
+                  id="login-pin"
+                  value="1234"
+                  type="text"
+                  class="input"
+                  placeholder="Enter 4 Digit Pin"
+                  required />
+                <div><a class="link link-hover">Forgot password?</a></div>
+
+                <!-- Login Button -->
+                <button
+                  id="addmoney-btn"
+                  class="btn btn-neutral mt-4 bg-blue-700 rounded-full">
+                  Add Money
+                </button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </section>
     </section>
-<!-- Add Money section -->
-    <section>
 
-    </section>
-
-
-
-
-
-    </section>
-
-    
+    <script src="./javascript/addmoneyLJ.js"></script>
+    <script src="./utilities/utilities.js"></script>
   </body>
 </html>
